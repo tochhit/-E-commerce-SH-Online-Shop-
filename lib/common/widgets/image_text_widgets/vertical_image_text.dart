@@ -1,3 +1,4 @@
+import 'package:ecommerce/common/widgets/images/t_circular_image.dart';
 import 'package:flutter/material.dart';
 
 import '../../../utils/constants/colors.dart';
@@ -11,6 +12,7 @@ class TVerticalImageText extends StatelessWidget {
     required this.image,
     required this.title,
     this.textColor = TColors.white,
+    this.isNetworkImage = true,
     this.backgroundColor,
 
   });
@@ -18,6 +20,7 @@ class TVerticalImageText extends StatelessWidget {
   final String image, title;
   final Color textColor;
   final Color? backgroundColor;
+  final bool isNetworkImage;
   final void Function()? onTap;
 
 
@@ -33,22 +36,18 @@ class TVerticalImageText extends StatelessWidget {
         child: Column(
           children: [
             /// Circular Icon
-            Container(
-              width: 56,
-              height: 56,
-              padding: const EdgeInsets.all(TSizes.sm),
-              decoration: BoxDecoration(
-                color: backgroundColor ?? (dark ? TColors.black : TColors.white),
-                borderRadius: BorderRadius.circular(100),
-              ),
-              child: Center(
-                child: Image(image: AssetImage(image), fit: BoxFit.cover, color: dark ? TColors.light : TColors.dark),
-              ),
+            TCircularImage(
+              image: image,
+              fit:  BoxFit.fitHeight,
+              padding: TSizes.sm * 1.4,
+              backgroundColor: backgroundColor,
+              overlayColor: THelperFunctions.isDarkMode(context) ? TColors.light : TColors.dark,
+              isNetworkImage: isNetworkImage,
             ),
             /// Text
             const SizedBox(height: TSizes.spaceBtwItems / 2),
             SizedBox(
-              width: 55,
+              width: 60,
               child: Center(
                 child: Text(
                   title,

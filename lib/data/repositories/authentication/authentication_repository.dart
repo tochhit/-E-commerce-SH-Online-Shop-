@@ -152,8 +152,6 @@ class AuthenticationRepository extends GetxController {
   }
 
 
-
-
   /// [GoogleAuthentication] - GOOGLE
   Future<UserCredential?> signInWithGoogle() async {
     try {
@@ -183,9 +181,6 @@ class AuthenticationRepository extends GetxController {
     }
 
   }
-
-
-
 
 
   /// [LogoutUser] - Valid for any authentication

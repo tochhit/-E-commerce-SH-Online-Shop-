@@ -9,7 +9,6 @@ import '../../../../common/widgets/custom_shapes/containers/primary_header_conta
 import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
 import '../../../../common/widgets/layouts/grid_layout.dart';
 import '../../../../common/widgets/texts/section_heading.dart';
-import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -57,7 +56,7 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     /// Promo Slider
-                    const TPromoSlider(banners: [TImages.promoBanner1, TImages.promoBanner2, TImages.promoBanner3],),
+                    const TPromoSlider(),
                     const SizedBox(height: TSizes.spaceBtwSections),
 
                     /// -- Heading
@@ -76,17 +75,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

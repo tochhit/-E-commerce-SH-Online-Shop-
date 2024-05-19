@@ -32,6 +32,7 @@ class TProductMetaData extends StatelessWidget {
         Row(
           children: [
             /// Sale Tag
+            if(salePercentage != null)
             TRoundedContainer(
               radius: TSizes.sm,
               backgroundColor: TColors.secondary.withOpacity(0.8),

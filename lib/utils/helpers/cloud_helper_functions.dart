@@ -50,5 +50,4 @@ class TCloudHelperFunctions {
       throw 'Something went wrong.';
     }
   }
-
 }

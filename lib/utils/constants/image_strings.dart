@@ -26,6 +26,7 @@ class TImages {
   // Lottie Animations
   static const String docerAnimation = "assets/images/animations/docer.json";
   static const String successfullyRegisterAnimation = "assets/images/animations/successfully.json";
+  static const String noteAnimation = "assets/images/animations/note.json";
 
 
   // -- Category Icons

@@ -4,7 +4,7 @@ import 'package:ecommerce/data/repositories/user/user_repository.dart';
 import 'package:ecommerce/features/authenticantion/models/user/user_model.dart';
 import 'package:ecommerce/features/authenticantion/screens/login/login.dart';
 import 'package:ecommerce/features/personalization/screens/profile/widgets/re_authenticate_user_login_form.dart';
-import 'package:ecommerce/network_manager.dart';
+import 'package:ecommerce/utils/helpers/network_manager.dart';
 import 'package:ecommerce/utils/constants/image_strings.dart';
 import 'package:ecommerce/utils/constants/sizes.dart';
 import 'package:ecommerce/utils/popups/full_screen_loader.dart';
@@ -113,7 +113,7 @@ class UserController extends GetxController {
 
       /// First re-authenticate user
       final auth = AuthenticationRepository.instance;
-      final provider = auth.authUser!.providerData.map((e) => e.providerId).first;
+      final provider = auth.authUser.providerData.map((e) => e.providerId).first;
       if(provider.isNotEmpty) {
         // Re Verify Auth Email
         if (provider == 'google.com') {

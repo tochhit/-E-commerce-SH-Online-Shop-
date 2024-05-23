@@ -1,4 +1,6 @@
+import 'package:ecommerce/add_to_cart_button.dart';
 import 'package:ecommerce/common/widgets/images/t_rounded_image.dart';
+import 'package:ecommerce/common/widgets/products/favourite_icon/dart/favourite_icon.dart';
 import 'package:ecommerce/common/widgets/products/products_cards/rounded_container.dart';
 import 'package:ecommerce/common/widgets/texts/product_title_text.dart';
 import 'package:ecommerce/features/shop/controllers/product/product_controller.dart';
@@ -7,13 +9,10 @@ import 'package:ecommerce/features/shop/screens/product_details/product_detail.d
 import 'package:ecommerce/utils/constants/enums.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
-
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/helpers/helper_functions.dart';
 import '../../../styles/shadows.dart';
-import '../../icons/t_circular_icon.dart';
 import '../../texts/product_price_text.dart';
 import '../../texts/t_brand_title_text_with_verified_icon.dart';
 
@@ -65,10 +64,10 @@ class TProductCardVertical extends StatelessWidget {
                   ),
 
                   /// -- Favourite Icon Button
-                  const Positioned(
+                  Positioned(
                       top: 0,
                       right: 0,
-                      child: TCircularIcon(icon: Iconsax.heart5, color: Colors.red),
+                      child: TFavouriteIcon(productId: product.id),
                   ),
                 ],
               ),
@@ -120,20 +119,7 @@ class TProductCardVertical extends StatelessWidget {
                 ),
 
                 /// Add to Cart Button
-                Container(
-                  decoration: const BoxDecoration(
-                    color: TColors.dark,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(TSizes.cardRadiusMd),
-                      bottomRight: Radius.circular(TSizes.productImageRadius),
-                    ),
-                  ),
-                  child: const SizedBox(
-                    width: TSizes.iconLg * 1.2,
-                    height: TSizes.iconLg * 1.2,
-                    child: Center(child: Icon(Iconsax.add, color: TColors.white)),
-                  ),
-                ),
+                ProductCardAddToCartButton(product: product),
               ],
             ),
           ],

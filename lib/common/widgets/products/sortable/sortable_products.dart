@@ -1,4 +1,4 @@
-import 'package:ecommerce/features/shop/controllers/product/all_products_controller.dart';
+import 'package:ecommerce/features/shop/controllers/all_products_controller.dart';
 import 'package:ecommerce/features/shop/models/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -11,9 +11,9 @@ import '../products_cards/product_card_vertical.dart';
 
 class TSortableProducts extends StatelessWidget {
   const TSortableProducts({
-    Key? key,
+    super.key,
     required this.products,
-  }) : super(key: key);
+  });
 
   final List<ProductModel> products;
 

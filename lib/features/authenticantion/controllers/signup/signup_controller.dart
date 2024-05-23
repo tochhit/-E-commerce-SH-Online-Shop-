@@ -2,7 +2,7 @@ import 'package:ecommerce/data/repositories/authentication/authentication_reposi
 import 'package:ecommerce/data/repositories/user/user_repository.dart';
 import 'package:ecommerce/features/authenticantion/models/user/user_model.dart';
 import 'package:ecommerce/features/authenticantion/screens/signup/veriffy_email.dart';
-import 'package:ecommerce/network_manager.dart';
+import 'package:ecommerce/utils/helpers/network_manager.dart';
 import 'package:ecommerce/utils/constants/image_strings.dart';
 import 'package:ecommerce/utils/popups/full_screen_loader.dart';
 import 'package:ecommerce/utils/popups/loaders.dart';

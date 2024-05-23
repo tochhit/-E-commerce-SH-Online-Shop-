@@ -1,7 +1,7 @@
 
 import 'package:ecommerce/data/repositories/authentication/authentication_repository.dart';
 import 'package:ecommerce/features/authenticantion/screens/password_configuration/reset_password.dart';
-import 'package:ecommerce/network_manager.dart';
+import 'package:ecommerce/utils/helpers/network_manager.dart';
 import 'package:ecommerce/utils/constants/image_strings.dart';
 import 'package:ecommerce/utils/popups/full_screen_loader.dart';
 import 'package:ecommerce/utils/popups/loaders.dart';

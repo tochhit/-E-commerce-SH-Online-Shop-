@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecommerce/common/widgets/appbar/appbar.dart';
 import 'package:ecommerce/common/widgets/shimmers/vertical_product_shimmer.dart';
-import 'package:ecommerce/features/shop/controllers/product/all_products_controller.dart';
+import 'package:ecommerce/features/shop/controllers/all_products_controller.dart';
 import 'package:ecommerce/features/shop/models/product_model.dart';
 import 'package:ecommerce/utils/constants/sizes.dart';
 import 'package:ecommerce/utils/helpers/cloud_helper_functions.dart';

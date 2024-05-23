@@ -15,7 +15,8 @@ class THomeCategories extends StatelessWidget {
   Widget build(BuildContext context) {
     final categoryController = Get.put(CategoryController());
 
-    return Obx(() {
+    return Obx(
+            () {
       if(categoryController.isLoading.value) return const TCategoryShimmer();
 
       if(categoryController.featuredCategories.isEmpty) {
@@ -30,7 +31,11 @@ class THomeCategories extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemBuilder: (_, index) {
             final category = categoryController.featuredCategories[index];
-            return TVerticalImageText(image: category.image, title: category.name, onTap: () => Get.to(() => const SubCategoriesScreen()));
+            return TVerticalImageText(
+                image: category.image,
+                title: category.name,
+                onTap: () => Get.to(() => SubCategoriesScreen(category: category)),
+            );
           },
         ),
       );

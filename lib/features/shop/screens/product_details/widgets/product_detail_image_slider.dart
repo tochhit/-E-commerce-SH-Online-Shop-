@@ -1,14 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:ecommerce/common/widgets/products/favourite_icon/dart/favourite_icon.dart';
 import 'package:ecommerce/features/shop/controllers/product/images_controller.dart';
 import 'package:ecommerce/features/shop/models/product_model.dart';
 import 'package:ecommerce/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
-
 import '../../../../../common/widgets/appbar/appbar.dart';
 import '../../../../../common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
-import '../../../../../common/widgets/icons/t_circular_icon.dart';
 import '../../../../../common/widgets/images/t_rounded_image.dart';
 import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/constants/sizes.dart';
@@ -82,9 +80,9 @@ class TProductImageSlider extends StatelessWidget {
             ),
 
             /// Appbar Icon
-            const TAppBar(
+            TAppBar(
               showBackArrow: true,
-              actions: [TCircularIcon(icon: Iconsax.heart5, color: Colors.red)],
+              actions: [TFavouriteIcon(productId: product.id)],
             )
 
 

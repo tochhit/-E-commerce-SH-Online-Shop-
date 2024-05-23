@@ -46,11 +46,11 @@ class BrandModel {
         id: document.id,
         name: data['Name'] ?? '',
         image: data['Image'] ?? '',
+        productsCount: data['ProductsCount'] ?? '',
         isFeatured: data['IsFeatured'] ?? false,
-        productsCount: int.parse((data['ProductsCount'] ?? 0).toString()),
       );
     } else {
-      throw Exception('Empty document snapshot for BrandModel');
+      return BrandModel.empty();
     }
   }
 

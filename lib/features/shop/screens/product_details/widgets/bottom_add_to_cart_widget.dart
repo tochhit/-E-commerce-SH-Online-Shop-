@@ -10,8 +10,9 @@ import 'package:iconsax/iconsax.dart';
 
 class TBottomAddToCart extends StatelessWidget {
   const TBottomAddToCart({
-    super.key, required this.product
-  });
+    Key? key,
+    required this.product,
+  }) : super(key: key);
 
   final ProductModel product;
 
@@ -27,10 +28,10 @@ class TBottomAddToCart extends StatelessWidget {
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(TSizes.cardRadiusLg),
           topRight: Radius.circular(TSizes.cardRadiusLg),
-        )
+        ),
       ),
       child: Obx(
-        () => Row(
+            () => Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
@@ -41,7 +42,16 @@ class TBottomAddToCart extends StatelessWidget {
                   width: 40,
                   height: 40,
                   color: TColors.white,
-                  onPressed: () => controller.productQuantityInCart.value < 1 ? null : controller.productQuantityInCart -= 1,
+                  onPressed: () {
+                    // Check if the product quantity is greater than 0
+                    if (controller.productQuantityInCart.value > 0) {
+                      controller.productQuantityInCart -= 1;
+                      // If the quantity becomes 0, remove the product from the cart
+                      if (controller.productQuantityInCart.value == 0) {
+                        controller.removeFromCart(product);
+                      }
+                    }
+                  },
                 ),
                 const SizedBox(width: TSizes.spaceBtwItems),
                 Text(controller.productQuantityInCart.value.toString(), style: Theme.of(context).textTheme.titleSmall),
@@ -56,17 +66,21 @@ class TBottomAddToCart extends StatelessWidget {
                 ),
               ],
             ),
-            ElevatedButton(
-                onPressed: controller.productQuantityInCart.value < 1 ? null : () => controller.addToCart(product),
+            // Conditionally render the "Add to Cart" button text
+            if (controller.productQuantityInCart.value > 0)
+              ElevatedButton(
+                onPressed: () => controller.addToCart(product),
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.all(TSizes.md),
                   backgroundColor: TColors.black,
                   side: const BorderSide(color: TColors.black),
                 ),
-                child: const Text('Add to Cart'))
+                child: const Text('Add to Cart'),
+              ),
           ],
         ),
       ),
     );
   }
 }
+

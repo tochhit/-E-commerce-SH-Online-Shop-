@@ -64,23 +64,19 @@ class CheckoutScreen extends StatelessWidget {
 
                     /// Address
                     TBillingAddressSection(),
-
-
                   ],
                 ),
               )
-
             ],
           ),
         ),
       ),
 
-
       /// Checkout Button
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(TSizes.defaultSpace),
         child: ElevatedButton(
-            onPressed: () => subTotal > 0
+            onPressed: subTotal > 0
               ? () => orderController.processOrder(totalAmount)
               : () => TLoaders.warningSnackBar(title: 'Empty Cart', message: 'Add items in the cart in order to proceed.'),
             child: Text('Checkout \$$totalAmount'),

@@ -12,8 +12,7 @@ class TBillingAddressSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        TSectionHeading(
-            title: 'Shipping Address', buttonTitle: 'Change', onPressed: () => addressController.selectNewAddressPopup(context)),
+        TSectionHeading(title: 'Shipping Address', buttonTitle: 'Change', onPressed: () => addressController.selectNewAddressPopup(context)),
         addressController.selectedAddress.value.id.isNotEmpty
             ? Column(
               crossAxisAlignment: CrossAxisAlignment.start,

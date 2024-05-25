@@ -36,7 +36,7 @@ class OrderController extends GetxController {
   void processOrder(double totalAmount) async {
     try {
       // Start Loader
-      TFullScreenLoader.openLoadingDialog('Processing your order', TImages.successfullyRegisterAnimation);
+      TFullScreenLoader.openLoadingDialog('Processing your order', TImages.docerAnimation);
 
       // Get user authentication Id
       final userId = AuthenticationRepository.instance.authUser.uid;

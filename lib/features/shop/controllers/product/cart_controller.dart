@@ -47,6 +47,7 @@ class CartController extends GetxController {
       }
     }
 
+
     // Convert the ProductModel to a CartItemModel with the given quantity
     final selectedCartItem = convertToCartItem(product, productQuantityInCart.value);
 
@@ -65,6 +66,36 @@ class CartController extends GetxController {
     TLoaders.customToast(message: 'Your Product has been added to the Cart.');
 
   }
+
+
+  void removeFromCart(ProductModel product) {
+    // Find the index of the product in the cartItems list
+    int index = cartItems.indexWhere((cartItem) => cartItem.productId == product.id);
+
+    if (index >= 0 && index < cartItems.length) { // Check if index is valid
+      // Show a confirmation dialog before removing the product
+      Get.defaultDialog(
+        title: 'Remove Product',
+        middleText: 'Are you sure you want to remove this product?',
+        onConfirm: () {
+          // If confirmed, remove the product from the cart
+          cartItems.removeAt(index);
+          // Update the cart totals
+          updateCart();
+          // Show a toast message indicating that the product has been removed from the cart
+          TLoaders.customToast(message: 'Product removed from the Cart.');
+          // Close the dialog
+          Get.back();
+        },
+        onCancel: () {}, // Removed extra function call here
+      );
+    }
+  }
+
+
+
+
+
 
   void addOneToCart (CartItemModel item) {
     int index = cartItems.indexWhere((cartItem) => cartItem.productId == item.productId && cartItem.variationId == item.variationId);
@@ -206,6 +237,7 @@ class CartController extends GetxController {
     cartItems.clear();
     updateCart();
   }
+
 
 
 }

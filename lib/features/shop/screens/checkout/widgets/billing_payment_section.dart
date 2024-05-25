@@ -33,8 +33,6 @@ class TBillingPaymentSection extends StatelessWidget {
             ],
           ),
         )
-
-
       ],
     );
   }

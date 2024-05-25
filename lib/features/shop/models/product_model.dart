@@ -21,6 +21,9 @@ class ProductModel {
   String productType;
   List<ProductAttributeModel>? productAttributes;
   List<ProductVariationModel>? productVariations;
+  double userRating;
+  int totalRatings;
+  double averageRating;
 
   ProductModel ({
     required this.id,
@@ -39,6 +42,10 @@ class ProductModel {
     this.description,
     this.productAttributes,
     this.productVariations,
+    this.userRating = 0.0,
+    this.totalRatings = 0,
+    this.averageRating = 0.0,
+
 });
 
   /// Create Empty func for clean code
@@ -63,6 +70,7 @@ class ProductModel {
       'ProductVariations': productVariations != null ? productVariations!.map((e) => e.toJson()).toList() : [],
     };
   }
+  
 
   /// Map Json oriented document snapshot from Firebase to Model
   factory ProductModel.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> document) {

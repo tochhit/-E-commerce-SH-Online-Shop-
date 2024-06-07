@@ -34,7 +34,6 @@ class TSearchContainer extends StatelessWidget {
         padding: padding,
         child: Container(
           width: TDeviceUtils.getScreenWidth(context),
-          padding: const EdgeInsets.all(TSizes.md),
           decoration: BoxDecoration(
             color: showBackground ? dark ? TColors.dark : TColors.light : Colors.transparent,
             borderRadius: BorderRadius.circular(TSizes.cardRadiusLg),
@@ -43,9 +42,15 @@ class TSearchContainer extends StatelessWidget {
 
           child: Row(
             children: [
-              Icon(icon, color: dark ? TColors.darkerGrey : Colors.grey),
-              const SizedBox(width: TSizes.spaceBtwItems),
-              Text(text, style: Theme.of(context).textTheme.bodySmall),
+              Expanded(
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: text,
+                    hintStyle: Theme.of(context).textTheme.bodySmall,
+                    prefixIcon: Icon(icon, color: dark ? TColors.white : TColors.darkerGrey),),
+                  onTap: onTap,
+                ),
+              ),
             ],
           ),
         ),

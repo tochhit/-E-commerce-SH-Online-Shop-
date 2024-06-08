@@ -14,8 +14,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
-
-import '../product_reviews/widgets/product_rating_bar.dart';
 import '../product_reviews/widgets/user_review_card.dart';
 
 
@@ -81,15 +79,15 @@ class ProductDetailScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: TSizes.spaceBtwSections / 2),
                   /// - Product Rating
-                  const TSectionHeading(title: 'Rate this product', showActionButton: false),
-                  const SizedBox(height: TSizes.spaceBtwItems),
-                  ProductRatingBar(
-                    initialRating: product.userRating,
-                    onRatingChanged: (rating) { // Ignore the review comment
-                      // Handle rating change here
-                    },
-                  ),
-                  const SizedBox(height: TSizes.spaceBtwSections),
+                  // const TSectionHeading(title: 'Rate this product', showActionButton: false),
+                  // const SizedBox(height: TSizes.spaceBtwItems),
+                  // ProductRatingBar(
+                  //   initialRating: product.userRating,
+                  //   onRatingChanged: (rating) { // Ignore the review comment
+                  //     // Handle rating change here
+                  //   },
+                  // ),
+                  //const SizedBox(height: TSizes.spaceBtwSections),
                   const UserReviewCard(),
                 ],
               ),

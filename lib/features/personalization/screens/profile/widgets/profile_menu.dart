@@ -1,6 +1,5 @@
 import 'package:ecommerce/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 
 
 class TProfileMenu extends StatelessWidget {
@@ -9,12 +8,12 @@ class TProfileMenu extends StatelessWidget {
     required this.onPressed,
     required this.title,
     required this.value,
-    this.icon = Iconsax.arrow_right_34,
+    this.icon,
 
   });
 
 
-  final IconData icon;
+  final IconData? icon;
   final VoidCallback onPressed;
   final String title, value;
 

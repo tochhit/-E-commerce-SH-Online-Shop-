@@ -8,25 +8,24 @@ import '../../../../utils/helpers/helper_functions.dart';
 
 class TSearchContainer extends StatelessWidget {
   const TSearchContainer({
-    super.key,
+    Key? key,
     required this.text,
     this.icon = Iconsax.search_normal,
     this.showBackground = true,
     this.showBorder = true,
-    this.onTap,
+    required this.onTap, // Add required callback function parameter
     this.padding = const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
-  });
+  }) : super(key: key);
 
   final String text;
   final IconData? icon;
   final bool showBackground, showBorder;
-  final VoidCallback? onTap;
+  final VoidCallback onTap; // Change VoidCallback to required
   final EdgeInsetsGeometry padding;
 
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
-
 
     return GestureDetector(
       onTap: onTap,
@@ -34,23 +33,17 @@ class TSearchContainer extends StatelessWidget {
         padding: padding,
         child: Container(
           width: TDeviceUtils.getScreenWidth(context),
+          padding: const EdgeInsets.all(TSizes.md),
           decoration: BoxDecoration(
             color: showBackground ? dark ? TColors.dark : TColors.light : Colors.transparent,
             borderRadius: BorderRadius.circular(TSizes.cardRadiusLg),
             border: showBorder ? Border.all(color: TColors.grey) : null,
           ),
-
           child: Row(
             children: [
-              Expanded(
-                child: TextField(
-                  decoration: InputDecoration(
-                    hintText: text,
-                    hintStyle: Theme.of(context).textTheme.bodySmall,
-                    prefixIcon: Icon(icon, color: dark ? TColors.white : TColors.darkerGrey),),
-                  onTap: onTap,
-                ),
-              ),
+              Icon(icon, color: dark ? TColors.darkerGrey : Colors.grey),
+              const SizedBox(width: TSizes.spaceBtwItems),
+              Text(text, style: Theme.of(context).textTheme.bodySmall),
             ],
           ),
         ),

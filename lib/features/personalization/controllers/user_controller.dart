@@ -14,6 +14,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../../../utils/validators/validation.dart';
+import '../screens/profile/profile.dart';
+
 class UserController extends GetxController {
   static UserController get instance => Get.find();
 
@@ -25,6 +28,7 @@ class UserController extends GetxController {
   final verifyEmail = TextEditingController();
   final verifyPassword = TextEditingController();
   final userRepository = Get.put(UserRepository());
+  final newPhoneNumber = ''.obs;
   GlobalKey<FormState> reAuthFormKey = GlobalKey<FormState>();
 
 
@@ -184,6 +188,39 @@ class UserController extends GetxController {
       TLoaders.errorSnackBar(title: 'Oh Snap!', message: 'Something went wrong: $e');
     } finally {
       imageUploading.value = false;
+    }
+  }
+
+  Future<void> updatePhoneNumber() async {
+    final validationMessage = TValidator.validatePhoneNumber(newPhoneNumber.value);
+    if (validationMessage != null) {
+      Get.snackbar(
+        'Invalid Phone Number',
+        validationMessage,
+        snackPosition: SnackPosition.BOTTOM,
+      );
+      return;
+    }
+
+    TFullScreenLoader.openLoadingDialog('We are updating your information...', TImages.docerAnimation);
+
+    try {
+      await userRepository.updateSingleField({'PhoneNumber': newPhoneNumber.value});
+      user.update((val) {
+        val?.phoneNumber = newPhoneNumber.value;
+      });
+      Get.snackbar(
+        'Success',
+        'Your phone number has been updated.',
+        snackPosition: SnackPosition.BOTTOM,
+      );
+      Get.to(() => const ProfileScreen()); // Navigate back to ProfileScreen
+    } catch (e) {
+      Get.snackbar(
+        'Error',
+        'Failed to update phone number. Please try again.',
+        snackPosition: SnackPosition.BOTTOM,
+      );
     }
   }
 

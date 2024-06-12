@@ -16,6 +16,8 @@ import 'package:get/get.dart';
 import '../../../../common/widgets/brands/brand_card.dart';
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/sizes.dart';
+import '../../controllers/product/product_controller.dart';
+import '../all_products/all_products.dart';
 
 
 class StoreScreen extends StatelessWidget {
@@ -25,6 +27,8 @@ class StoreScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final brandController = Get.put(BrandController());
     final categories = CategoryController.instance.featuredCategories;
+    final controller = Get.put(ProductController());
+
     return DefaultTabController(
       length: categories.length,
       child: Scaffold(
@@ -52,8 +56,14 @@ class StoreScreen extends StatelessWidget {
                   children: [
                     /// -- Search bar
                     const SizedBox(height: TSizes.spaceBtwItems),
-                    const TSearchContainer(
-                        text: 'Search in Store', showBorder: true, showBackground: false, padding: EdgeInsets.zero),
+                    TSearchContainer(
+                        text: 'Search in Store', showBorder: true, showBackground: false, padding: EdgeInsets.zero, onTap: () {
+                      // Navigate to AllProducts screen when TSearchContainer is tapped
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => AllProducts(title: 'Search Results', futureMethod: controller.fetchAllFeaturedProducts())),
+                      );
+                    },),
                     const SizedBox(height: TSizes.spaceBtwSections),
 
                     /// -- Featured Brands

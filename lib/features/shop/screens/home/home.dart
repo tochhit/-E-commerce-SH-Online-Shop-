@@ -24,19 +24,25 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             /// Header
-            const TPrimaryHeaderContainer(
+            TPrimaryHeaderContainer(
               child: Column(
                 children: [
                   /// Appbar
-                  THomeAppBar(),
-                  SizedBox(height: TSizes.spaceBtwSections),
+                  const THomeAppBar(),
+                  const SizedBox(height: TSizes.spaceBtwSections),
 
                   /// Searchbar
-                  TSearchContainer(text: 'Search in Store', showBorder: false),
-                  SizedBox(height: TSizes.spaceBtwSections),
+                  TSearchContainer(text: 'Search in Store', showBorder: false, onTap: () {
+                    // Navigate to AllProducts screen when TSearchContainer is tapped
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AllProducts(title: 'Search Results', futureMethod: controller.fetchAllFeaturedProducts())),
+                    );
+                  },),
+                  const SizedBox(height: TSizes.spaceBtwSections),
 
                   /// Categories
-                  Padding(
+                  const Padding(
                       padding: EdgeInsets.only(left: TSizes.defaultSpace),
                       child: Column(
                         children: [
@@ -49,7 +55,7 @@ class HomeScreen extends StatelessWidget {
                         ],
                       ),
                   ),
-                  SizedBox(height: TSizes.spaceBtwSections),
+                  const SizedBox(height: TSizes.spaceBtwSections),
                 ],
               )
             ),

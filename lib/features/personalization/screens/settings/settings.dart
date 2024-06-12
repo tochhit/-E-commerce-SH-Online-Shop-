@@ -64,17 +64,14 @@ class SettingsScreen extends StatelessWidget {
                       subTitle: 'In-progress and Completed Orders',
                       onTap: () => Get.to(() => const OrderScreen()),
                     ),
-                    const TSettingsMenuTile(icon: Iconsax.bank, title: 'Bank Addresses', subTitle: 'Withdraw balance to registered bank account'),
-                    const TSettingsMenuTile(icon: Iconsax.discount_shape, title: 'My Coupons', subTitle: 'List of all the discounted coupons'),
+                    const TSettingsMenuTile(icon: Iconsax.card, title: 'Credit Card', subTitle: 'Withdraw balance to add card'),
                     const TSettingsMenuTile(icon: Iconsax.notification, title: 'Notifications', subTitle: 'Set any kind of notification message'),
-                    const TSettingsMenuTile(icon: Iconsax.security_card, title: 'Account Privacy', subTitle: 'Manage data usage and connected accounts'),
 
 
                     /// App Settings
                     const SizedBox(height: TSizes.spaceBtwSections),
                     const TSectionHeading(title: 'App Settings', showActionButton: false),
                     const SizedBox(height: TSizes.spaceBtwItems),
-                    const TSettingsMenuTile(icon: Iconsax.document_upload, title: 'Load Data', subTitle: 'Upload Data to your Cloud Firebase'),
                     TSettingsMenuTile(
                         icon: Iconsax.location,
                         title: 'Geolocation',
@@ -85,12 +82,6 @@ class SettingsScreen extends StatelessWidget {
                       icon: Iconsax.security_user,
                       title: 'Safe Mode',
                       subTitle: 'Search result is safe for all ages',
-                      trailing: Switch(value: false, onChanged: (value) {}),
-                    ),
-                    TSettingsMenuTile(
-                      icon: Iconsax.location,
-                      title: 'HD Image Quality',
-                      subTitle: 'Set image quality to be seen',
                       trailing: Switch(value: false, onChanged: (value) {}),
                     ),
 

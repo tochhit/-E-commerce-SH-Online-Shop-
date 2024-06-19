@@ -1,6 +1,5 @@
 import 'package:ecommerce/common/widgets/shimmers/category_shimmer.dart';
 import 'package:ecommerce/features/shop/controllers/category_controlleer.dart';
-import 'package:ecommerce/features/shop/screens/sub_category/sub_categories.dart';
 import 'package:ecommerce/user_no_login/screen/screen/u_sub_categories.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

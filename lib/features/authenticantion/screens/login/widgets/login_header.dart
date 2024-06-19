@@ -1,13 +1,10 @@
 import 'package:ecommerce/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../../../../common/widgets/login_signup/social.buttons.dart';
 import '../../../../../user_no_login/navigation_menu.dart';
 import '../../../../../utils/constants/image_strings.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/constants/text_strings.dart';
-import '../../../../../navigation_menu.dart';
 import '../../../controllers/login/login_controller.dart';
 
 class TLoginHeader extends StatelessWidget {

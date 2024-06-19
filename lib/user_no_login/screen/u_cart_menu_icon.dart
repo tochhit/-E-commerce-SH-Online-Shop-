@@ -2,9 +2,7 @@ import 'package:ecommerce/user_no_login/screen/u_cart.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-
 import '../../../../utils/constants/colors.dart';
-import '../../features/shop/screens/cart/cart.dart';
 import '../../../../utils/helpers/helper_functions.dart';
 
 class UCartCounterIcon extends StatefulWidget {
@@ -61,7 +59,7 @@ class _UCartCounterIconState extends State<UCartCounterIcon> {
             child: Center(
               child: Text(
                 _cartItemCount.toString(),
-                style: Theme.of(context).textTheme.subtitle2!.apply(
+                style: Theme.of(context).textTheme.titleSmall!.apply(
                   color: widget.counterTextColor ?? (dark ? TColors.black : TColors.white),
                   fontSizeFactor: 0.8,
                 ),

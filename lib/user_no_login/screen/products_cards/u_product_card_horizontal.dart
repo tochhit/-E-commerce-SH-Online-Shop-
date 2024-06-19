@@ -1,14 +1,10 @@
-
-import 'package:ecommerce/add_to_cart_button.dart';
 import 'package:ecommerce/common/widgets/images/t_rounded_image.dart';
-import 'package:ecommerce/common/widgets/products/favourite_icon/dart/favourite_icon.dart';
 import 'package:ecommerce/common/widgets/products/products_cards/rounded_container.dart';
 import 'package:ecommerce/common/widgets/texts/product_price_text.dart';
 import 'package:ecommerce/common/widgets/texts/product_title_text.dart';
 import 'package:ecommerce/common/widgets/texts/t_brand_title_text_with_verified_icon.dart';
 import 'package:ecommerce/features/shop/controllers/product/product_controller.dart';
 import 'package:ecommerce/features/shop/models/product_model.dart';
-import 'package:ecommerce/features/shop/screens/product_details/product_detail.dart';
 import 'package:ecommerce/utils/constants/enums.dart';
 import 'package:ecommerce/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';

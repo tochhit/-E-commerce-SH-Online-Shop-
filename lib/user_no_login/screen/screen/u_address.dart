@@ -1,6 +1,5 @@
 import 'package:ecommerce/common/widgets/appbar/appbar.dart';
 import 'package:ecommerce/features/personalization/controllers/address_controller.dart';
-import 'package:ecommerce/features/personalization/screens/address/add_new_address.dart';
 import 'package:ecommerce/features/personalization/screens/address/widgets/single_address.dart';
 import 'package:ecommerce/user_no_login/screen/screen/u_login.dart';
 import 'package:ecommerce/utils/constants/colors.dart';

@@ -1,13 +1,11 @@
 import 'package:ecommerce/common/widgets/appbar/appbar.dart';
 import 'package:ecommerce/common/widgets/brands/brand_card.dart';
-import 'package:ecommerce/common/widgets/products/sortable/sortable_products.dart';
 import 'package:ecommerce/common/widgets/shimmers/vertical_product_shimmer.dart';
 import 'package:ecommerce/features/shop/controllers/brand_controller.dart';
 import 'package:ecommerce/features/shop/models/brand_model.dart';
 import 'package:ecommerce/user_no_login/screen/screen/u_sortable_products.dart';
 import 'package:ecommerce/utils/constants/sizes.dart';
 import 'package:ecommerce/utils/helpers/cloud_helper_functions.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 

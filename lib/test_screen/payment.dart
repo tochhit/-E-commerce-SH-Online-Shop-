@@ -1,6 +1,3 @@
-// payment_methods_screen.dart
-
-import 'package:ecommerce/test_screen/test_item.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

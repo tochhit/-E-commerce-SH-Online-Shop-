@@ -8,8 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../navigation_menu.dart';
-
 class UFavouriteScreen extends StatelessWidget {
   const UFavouriteScreen({super.key});
 

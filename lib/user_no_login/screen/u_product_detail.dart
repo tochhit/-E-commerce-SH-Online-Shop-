@@ -1,9 +1,6 @@
 import 'package:ecommerce/common/widgets/texts/section_heading.dart';
 import 'package:ecommerce/features/shop/models/product_model.dart';
-import 'package:ecommerce/features/shop/screens/cart/cart.dart';
-import 'package:ecommerce/features/shop/screens/product_details/widgets/bottom_add_to_cart_widget.dart';
 import 'package:ecommerce/features/shop/screens/product_details/widgets/product_attributes.dart';
-import 'package:ecommerce/features/shop/screens/product_details/widgets/product_detail_image_slider.dart';
 import 'package:ecommerce/features/shop/screens/product_details/widgets/product_meta_data.dart';
 import 'package:ecommerce/features/shop/screens/product_details/widgets/rating_share_widget.dart';
 import 'package:ecommerce/features/shop/screens/product_reviews/product_reviews.dart';

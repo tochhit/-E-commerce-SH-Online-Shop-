@@ -1,12 +1,9 @@
 import 'package:ecommerce/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../../../../user_no_login/navigation_menu.dart';
 import '../../../../../utils/constants/image_strings.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/constants/text_strings.dart';
-import '../../../../../navigation_menu.dart';
 
 class ULoginHeader extends StatelessWidget {
   const ULoginHeader({

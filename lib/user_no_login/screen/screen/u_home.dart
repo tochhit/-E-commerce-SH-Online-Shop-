@@ -1,8 +1,5 @@
-import 'package:ecommerce/common/widgets/products/products_cards/product_card_vertical.dart';
 import 'package:ecommerce/common/widgets/shimmers/vertical_product_shimmer.dart';
 import 'package:ecommerce/features/shop/controllers/product/product_controller.dart';
-import 'package:ecommerce/features/shop/screens/all_products/all_products.dart';
-import 'package:ecommerce/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:ecommerce/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:ecommerce/user_no_login/screen/products_cards/u_product_card_vertical.dart';
 import 'package:ecommerce/user_no_login/screen/u_all_product.dart';

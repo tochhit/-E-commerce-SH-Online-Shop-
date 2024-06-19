@@ -1,9 +1,6 @@
 import 'package:ecommerce/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../utils/constants/colors.dart';
-
-
 class AboutMenu extends StatelessWidget {
   const AboutMenu({
     super.key,

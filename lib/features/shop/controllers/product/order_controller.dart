@@ -49,7 +49,7 @@ class OrderController extends GetxController {
         status: OrderStatus.pending,
         totalAmount: totalAmount,
         orderDate: DateTime.now(),
-        paymentMethod: checkoutController.selectedPaymentMethod.value.name,
+        paymentMethod: checkoutController.selectedPaymentMethod.value!.cardHolderName,
         address: addressController.selectedAddress.value,
         // Set Data as needed
         deliveryDate: DateTime.now(),
@@ -63,7 +63,7 @@ class OrderController extends GetxController {
       cartController.clearCart();
 
       // Show Success screen
-      Get.off(() => SuccessScreen(
+      Get.offAll(() => SuccessScreen(
           image: TImages.successfullyRegisterAnimation,
           title: 'Payment Success!',
           subTitle: 'Your item will be shipped soon!',

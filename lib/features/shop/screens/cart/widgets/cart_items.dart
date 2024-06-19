@@ -9,54 +9,59 @@ import '../../../../../utils/constants/sizes.dart';
 
 class TCartItems extends StatelessWidget {
   const TCartItems({
-    super.key,
+    Key? key,
     this.showAddRemoveButtons = true,
-  });
+  }) : super(key: key);
 
   final bool showAddRemoveButtons;
 
   @override
   Widget build(BuildContext context) {
     final cartController = CartController.instance;
-    return Obx(
-      () => ListView.separated(
-        shrinkWrap: true,
-        itemCount: cartController.cartItems.length,
-        separatorBuilder: (_, __) => const SizedBox(height: TSizes.spaceBtwSections),
-        itemBuilder: (_, index) => Obx(
-          () {
-            final item = cartController.cartItems[index];
-            return Column(
-              children: [
-                /// Cart Item
-                TCartItem(cartItem: item),
-                if (showAddRemoveButtons) const SizedBox(height: TSizes.spaceBtwItems),
 
-                /// Add Remove Button Row with total Price
-                if (showAddRemoveButtons)
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          /// Extra Space
-                          const SizedBox(width: 70),
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          ListView.separated(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(), // Disable scrolling of the ListView
+            itemCount: cartController.cartItems.length,
+            separatorBuilder: (_, __) => const SizedBox(height: TSizes.spaceBtwSections),
+            itemBuilder: (_, index) => Obx(() {
+              final item = cartController.cartItems[index];
+              return Column(
+                children: [
+                  /// Cart Item
+                  TCartItem(cartItem: item),
+                  if (showAddRemoveButtons) const SizedBox(height: TSizes.spaceBtwItems),
 
-                          /// Add Remove Buttons
-                          TProductQuantityWithAddRemoveButton(
-                            quantity: item.quantity,
-                            add: () => cartController.addOneToCart(item),
-                            remove: () => cartController.removeOneFromCart(item),
-                          ),
-                        ],
-                      ),
-                      /// -- Product total price
-                      TProductPriceText(price: (item.price * item.quantity).toStringAsFixed(1)),
-                    ],
-                  ),
-              ],
-            );
-          }),
+                  /// Add Remove Button Row with total Price
+                  if (showAddRemoveButtons)
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            /// Extra Space
+                            const SizedBox(width: 70),
+
+                            /// Add Remove Buttons
+                            TProductQuantityWithAddRemoveButton(
+                              quantity: item.quantity,
+                              add: () => cartController.addOneToCart(item),
+                              remove: () => cartController.removeOneFromCart(item),
+                            ),
+                          ],
+                        ),
+                        /// -- Product total price
+                        TProductPriceText(price: (item.price * item.quantity).toStringAsFixed(1)),
+                      ],
+                    ),
+                ],
+              );
+            }),
+          ),
+        ],
       ),
     );
   }

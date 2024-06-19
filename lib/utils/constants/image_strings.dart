@@ -9,6 +9,10 @@ class TImages {
   // -- Social Logos
   static const String google = "assets/logos/google_icon.png";
   static const String facebook = "assets/logos/facebook_icon.png";
+  static const String messenger = "assets/logos/messenger.png";
+  static const String tiktok = "assets/logos/tiktok.png";
+  static const String telegram = "assets/logos/telegram.png";
+  static const String facebook2 = "assets/logos/facebook.png";
 
   // -- OnBoarding Images
   static const String onBoardingImage1 = "assets/images/on_boarding_images/sammy-line-searching.gif";
@@ -58,6 +62,15 @@ class TImages {
   static const String paypal = "assets/icons/payment_methods/paypal.png";
   static const String visa = "assets/icons/payment_methods/visa.png";
   static const String successfulPaymentIcon = "assets/icons/payment_methods/payment-check.png";
+  static const String abaPay = "assets/icons/payment_methods/aba.png";
+  static const String trueMoney = "assets/icons/payment_methods/true.png";
+  static const String wing = "assets/icons/payment_methods/wing.png";
+  static const String aceleda = "assets/icons/payment_methods/aceleda.png";
+  static const String amk = "assets/icons/payment_methods/amk.png";
+  static const String visa1 = "assets/icons/payment_methods/visa1.png";
+  static const String master1 = "assets/icons/payment_methods/master1.png";
+  static const String amex = "assets/icons/payment_methods/amex_logo.png";
+  static const String unionpay = "assets/icons/payment_methods/unionpay_logo.png";
 
 
 

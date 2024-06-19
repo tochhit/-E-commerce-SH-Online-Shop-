@@ -3,7 +3,7 @@ import 'package:ecommerce/common/widgets/brands/brand_card.dart';
 import 'package:ecommerce/common/widgets/layouts/grid_layout.dart';
 import 'package:ecommerce/common/widgets/texts/section_heading.dart';
 import 'package:ecommerce/features/shop/controllers/brand_controller.dart';
-import 'package:ecommerce/features/shop/screens/brand/brand_products.dart';
+import 'package:ecommerce/user_no_login/screen/u_brand_product.dart';
 import 'package:ecommerce/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -13,14 +13,14 @@ import '../../../../common/widgets/shimmers/brands_shimmer.dart';
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/helpers/helper_functions.dart';
 
-class AllBrandsScreen extends StatefulWidget {
-  const AllBrandsScreen({super.key});
+class UAllBrandsScreen extends StatefulWidget {
+  const UAllBrandsScreen({super.key});
 
   @override
-  _AllBrandsScreenState createState() => _AllBrandsScreenState();
+  _UAllBrandsScreenState createState() => _UAllBrandsScreenState();
 }
 
-class _AllBrandsScreenState extends State<AllBrandsScreen> {
+class _UAllBrandsScreenState extends State<UAllBrandsScreen> {
   late TextEditingController _searchController;
   final BrandController _brandController = BrandController.instance;
   bool _isSearchFocused = false; // Track if search bar is focused
@@ -112,7 +112,7 @@ class _AllBrandsScreenState extends State<AllBrandsScreen> {
                     return TBrandCard(
                       showBorder: true,
                       brand: brand,
-                      onTap: () => Get.to(() => BrandProducts(brand: brand)),
+                      onTap: () => Get.to(() => UBrandProducts(brand: brand)),
                     );
                   },
                 );

@@ -2,21 +2,23 @@ import 'package:ecommerce/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../common/widgets/login_signup/social.buttons.dart';
 import '../../../../../user_no_login/navigation_menu.dart';
 import '../../../../../utils/constants/image_strings.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/constants/text_strings.dart';
 import '../../../../../navigation_menu.dart';
-import '../../../controllers/login/login_controller.dart';
 
-class TLoginHeader extends StatelessWidget {
-  const TLoginHeader({
+class ULoginHeader extends StatelessWidget {
+  const ULoginHeader({
     super.key,
   });
+
+  void _skipLogin() {
+    Get.back();
+  }
+
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(LoginController());
     final dark = THelperFunctions.isDarkMode(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,7 +33,7 @@ class TLoginHeader extends StatelessWidget {
               alignment: Alignment.centerRight,
               child: IconButton(
                 icon: const Icon(Icons.clear),
-                onPressed: () => Get.offAll(const UNavigationMenu()),
+                onPressed: _skipLogin,
                 tooltip: 'Skip',
               ),
             ),

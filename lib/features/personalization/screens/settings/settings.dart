@@ -13,6 +13,8 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../common/widgets/list_tiles/user_profile_tile.dart';
+import '../../../../test_screen/payment.dart';
+import '../../../shop/screens/about/about.dart';
 import '../profile/profile.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -64,7 +66,18 @@ class SettingsScreen extends StatelessWidget {
                       subTitle: 'In-progress and Completed Orders',
                       onTap: () => Get.to(() => const OrderScreen()),
                     ),
-                    const TSettingsMenuTile(icon: Iconsax.card, title: 'Credit Card', subTitle: 'Withdraw balance to add card'),
+                    TSettingsMenuTile(
+                      icon: Iconsax.truck,
+                      title: 'Delivery',
+                      subTitle: 'Track deliveries and View deliveries',
+                      onTap: () {},
+                    ),
+                    TSettingsMenuTile(
+                        icon: Iconsax.card,
+                        title: 'Payment Methods',
+                        subTitle: 'add Payment and credit card details',
+                        onTap: () => Get.to(() => const PaymentMethodsScreen()),
+                    ),
                     const TSettingsMenuTile(icon: Iconsax.notification, title: 'Notifications', subTitle: 'Set any kind of notification message'),
 
 
@@ -76,13 +89,25 @@ class SettingsScreen extends StatelessWidget {
                         icon: Iconsax.location,
                         title: 'Geolocation',
                         subTitle: 'Set recommendation based on location',
-                        trailing: Switch(value: true, onChanged: (value) {}),
+                        trailing: Switch(value: false, onChanged: (value) {}),
                     ),
                     TSettingsMenuTile(
-                      icon: Iconsax.security_user,
-                      title: 'Safe Mode',
-                      subTitle: 'Search result is safe for all ages',
-                      trailing: Switch(value: false, onChanged: (value) {}),
+                      icon: Icons.dark_mode,
+                      title: 'Dark Mode',
+                      subTitle: 'Set dark mode screen',
+                      trailing: Switch(value: true, onChanged: (value) {}),
+                    ),
+                    TSettingsMenuTile(
+                      icon: Icons.language,
+                      title: 'Language',
+                      subTitle: 'English',
+                      onTap: (){},
+                    ),
+                    TSettingsMenuTile(
+                      icon: Icons.warning_rounded,
+                      title: 'About',
+                      subTitle: 'About Us',
+                      onTap: () => Get.to(const ContactUsScreen()),
                     ),
 
                     /// Logout Button

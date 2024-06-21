@@ -86,4 +86,10 @@ class TImages {
   static const String productImage5 = "assets/images/products/shoes4.png";
 
 
+  // Products
+  static const String cambodia = "assets/icons/flag/cambodia.png";
+  static const String china = "assets/icons/flag/china.png";
+  static const String english = "assets/icons/flag/english.png";
+
+
 }

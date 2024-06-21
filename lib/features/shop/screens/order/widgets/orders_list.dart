@@ -59,7 +59,7 @@ class TOrderListItems extends StatelessWidget {
                   Row(
                     children: [
                       /// 1 - Icon
-                      const Icon(Iconsax.truck),
+                      const Icon(Iconsax.bag_tick),
                       const SizedBox(width: TSizes.spaceBtwItems / 2),
 
                       /// 2 - Status & Date

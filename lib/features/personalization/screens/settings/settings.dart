@@ -13,6 +13,9 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../common/widgets/list_tiles/user_profile_tile.dart';
+import '../../../../test_screen/delivery/delivery.dart';
+import '../../../../test_screen/delivery/language.dart';
+import '../../../../test_screen/delivery/notification.dart';
 import '../../../../test_screen/payment.dart';
 import '../../../shop/screens/about/about.dart';
 import '../profile/profile.dart';
@@ -70,7 +73,7 @@ class SettingsScreen extends StatelessWidget {
                       icon: Iconsax.truck,
                       title: 'Delivery',
                       subTitle: 'Track deliveries and View deliveries',
-                      onTap: () {},
+                      onTap: () =>Get.to(() => const DeliveryScreen()),
                     ),
                     TSettingsMenuTile(
                         icon: Iconsax.card,
@@ -78,7 +81,12 @@ class SettingsScreen extends StatelessWidget {
                         subTitle: 'add Payment and credit card details',
                         onTap: () => Get.to(() => const PaymentMethodsScreen()),
                     ),
-                    const TSettingsMenuTile(icon: Iconsax.notification, title: 'Notifications', subTitle: 'Set any kind of notification message'),
+                    TSettingsMenuTile(
+                        icon: Iconsax.notification,
+                        title: 'Notifications',
+                        subTitle: 'Set any kind of notification message',
+                        onTap: () => Get.to(() => const NotificationScreen()),
+                    ),
 
 
                     /// App Settings
@@ -101,7 +109,7 @@ class SettingsScreen extends StatelessWidget {
                       icon: Icons.language,
                       title: 'Language',
                       subTitle: 'English',
-                      onTap: (){},
+                      onTap: () => Get.to(const LanguageScreen()),
                     ),
                     TSettingsMenuTile(
                       icon: Icons.warning_rounded,

@@ -75,6 +75,7 @@ flutter:
     - assets/images/on_boarding_images/
     - assets/images/reviews/
     - assets/icons/payment_methods/
+    - assets/icons/flag/
 
 
   #---------- LOCAL FONTS ---------#

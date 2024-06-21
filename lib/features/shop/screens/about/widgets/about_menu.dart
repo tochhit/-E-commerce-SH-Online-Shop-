@@ -26,7 +26,7 @@ class AboutMenu extends StatelessWidget {
           children: [
             Expanded(flex: 3, child: Text(title, style: Theme.of(context).textTheme.headlineSmall, overflow: TextOverflow.ellipsis)),
             Expanded(
-              flex: 11,
+              flex: 8,
               child: Text(value, style: Theme.of(context).textTheme.titleSmall, overflow: TextOverflow.ellipsis),
             ),
             Expanded(child: Icon(icon, size: 18)),

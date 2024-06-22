@@ -13,9 +13,11 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../common/widgets/list_tiles/user_profile_tile.dart';
+import '../../../../test_screen/dark_mod/theme_controller.dart';
 import '../../../../test_screen/delivery/delivery.dart';
 import '../../../../test_screen/delivery/language.dart';
 import '../../../../test_screen/delivery/notification.dart';
+import '../../../../test_screen/location/location_controller.dart';
 import '../../../../test_screen/payment.dart';
 import '../../../shop/screens/about/about.dart';
 import '../profile/profile.dart';
@@ -27,6 +29,8 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(LogoutController());
+    final themeController = ThemeController.instance;
+    final locationController = LocationController.instance;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -93,18 +97,28 @@ class SettingsScreen extends StatelessWidget {
                     const SizedBox(height: TSizes.spaceBtwSections),
                     const TSectionHeading(title: 'App Settings', showActionButton: false),
                     const SizedBox(height: TSizes.spaceBtwItems),
-                    TSettingsMenuTile(
+                    Obx(() {
+                      return TSettingsMenuTile(
                         icon: Iconsax.location,
-                        title: 'Geolocation',
+                        title: 'Location',
                         subTitle: 'Set recommendation based on location',
-                        trailing: Switch(value: false, onChanged: (value) {}),
-                    ),
-                    TSettingsMenuTile(
-                      icon: Icons.dark_mode,
-                      title: 'Dark Mode',
-                      subTitle: 'Set dark mode screen',
-                      trailing: Switch(value: true, onChanged: (value) {}),
-                    ),
+                        trailing: Switch(
+                          value: locationController.isLocationEnabled.value,
+                          onChanged: locationController.toggleLocation,
+                        ),
+                      );
+                    }),
+                    Obx(() {
+                      return TSettingsMenuTile(
+                        icon: Icons.dark_mode,
+                        title: 'Dark Mode',
+                        subTitle: 'Set dark mode screen',
+                        trailing: Switch(
+                          value: themeController.isDarkMode.value,
+                          onChanged: themeController.toggleTheme,
+                        ),
+                      );
+                    }),
                     TSettingsMenuTile(
                       icon: Icons.language,
                       title: 'Language',
